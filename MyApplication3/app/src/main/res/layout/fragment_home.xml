@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentHomeRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
+    tools:context=".HomeFragment">
+
+    <!-- Üdvözlő szöveg -->
+    <TextView
+        android:id="@+id/tvGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Üdv, felhasználó!"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- ADJUSTED: egyszerű szöveg a vásárolt jegyek címéhez -->
+    <TextView
+        android:id="@+id/tvTickets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvGreeting"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Jegyek..."
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textAlignment="viewStart" />
+
+    <!-- Üres állapot, ha nincs vásárolt jegy -->
+    <TextView
+        android:id="@+id/tvEmptyHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTickets"
+        android:layout_marginTop="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="A megvásárolt jegy(ek) itt fog(nak) megjelenni:"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:textAlignment="viewStart" />
+
+    <!-- Listázott vásárolt tételek -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHomePurchased"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvEmptyHome"
+        android:layout_marginTop="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
+
+</RelativeLayout>
